@@ -22,5 +22,5 @@ end
 
 function GameLogo:touched(touch)
     -- Codea does not automatically call this method
-    Scene.Touched(touch)
+   -- Scene.Touched(touch)
 end

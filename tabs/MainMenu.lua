@@ -22,7 +22,7 @@ local letterDropRobotWait = false
 local timeSinceRobotSelected
 
 function MainMenu:init()
-    moveToMainGameButton = Button("Dropbox:playButton", vec2(WIDTH/2, HEIGHT/2+110))
+  moveToMainGameButton = Button("Dropbox:playButton", vec2(WIDTH/2, HEIGHT/2+110))
     moveToGameButton = Button("Dropbox:Green Forward Button", vec2(WIDTH/2, HEIGHT/2+200))
     moveToTutorialButton = Button("Dropbox:tutorialButton", vec2(WIDTH/2, HEIGHT/2-40))
     moveToStoreButton = Button("Dropbox:storeButton", vec2(WIDTH/2, HEIGHT/2-190))
@@ -39,7 +39,7 @@ function MainMenu:draw()
     font("Palatino-Bold")
    -- sprite("Dropbox:background", WIDTH/2, HEIGHT/2)
     moveToMainGameButton:draw()
-    moveToGameButton:draw()
+  --  moveToGameButton:draw()
     moveToTutorialButton:draw()
     moveToStoreButton:draw()
     moveToSettingsButton:draw()
@@ -76,10 +76,10 @@ function MainMenu:touched(touch)
     letterDropRobot:touched(touch)
     
     if(moveToMainGameButton.selected == true) then
-        Scene.Change("maingame")
+        Scene.Change("game")
     end
     if(moveToGameButton.selected == true) then
-        Scene.Change("prestart")
+        Scene.Change("maingame")
     end
     if(moveToTutorialButton.selected == true) then
         Scene.Change("tutorial")

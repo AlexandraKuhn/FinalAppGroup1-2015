@@ -1,5 +1,6 @@
+--# Main
 -- Main
--- FinalAppGroup1-2015 Tutorial
+-- FinalAppGroup1-2015
 
 -- Created by: Alexandra Kuhn
 -- Created on: Nov 23 2015
@@ -11,11 +12,6 @@
 -- global to this program
 highScore = nil
 currentMoney = nil
-currentHat = nil
-currentShirt = nil
-currentPants = nil
-currentGlasses = nil
-
 --local wordWallWordList = {}
 wordWallWordList = {}
 timeLeftOnClock = 60
@@ -23,8 +19,8 @@ timeLeftOnClock = 60
 
 -- Use this function to perform your initial setup
 function setup()
-    supportedOrientations(PORTRAIT)
-    displayMode(FULLSCREEN)
+    supportedOrientations(PORTRAIT_ANY)
+    displayMode(FULLSCREEN_NO_BUTTONS)
     fill(0, 0, 0, 255)
     smooth()
     stroke(0, 0, 0, 255)
@@ -41,7 +37,7 @@ function setup()
     --table.insert(wordWallWordList, "anyone")
     table.insert(wordWallWordList, "are")
     -- "B" Letter Words
-    table.insert(wordWallWordList, "beautiful")
+    --table.insert(wordWallWordList, "beautiful")
     --table.insert(wordWallWordList, "because")
     --table.insert(wordWallWordList, "before")
     table.insert(wordWallWordList, "buy")
@@ -165,7 +161,7 @@ function setup()
     -- "Y" Letter Words
     table.insert(wordWallWordList, "your")
     table.insert(wordWallWordList, "you're")
-    
+
     highScore = readLocalData("highScore", 0)
     currentMoney = readLocalData("currentmoney", 0)
     -- create the scenes
@@ -173,7 +169,7 @@ function setup()
     Scene("gamelogo", GameLogo)
     Scene("mainmenu", MainMenu)
     Scene("maingame", MainGame)
-    Scene("prestart", GameStartScreen)
+    --Scene("prestart", GameStartScreen)
     Scene("game", GameScene)
     Scene("correctanswer", CorrectAnswer)
     Scene("timeup", TimeUpScene)
@@ -193,7 +189,7 @@ end
 
 -- This function gets called once every frame
 function draw()
-    -- This sets a dark background color 
+    -- This sets a dark background color
     background(40, 40, 50)
     Scene.Draw()
 end
